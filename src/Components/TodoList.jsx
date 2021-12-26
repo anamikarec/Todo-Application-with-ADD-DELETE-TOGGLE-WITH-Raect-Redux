@@ -4,6 +4,11 @@ import { useSelector } from "react-redux";
 const TodoList = () => {
   const todos = useSelector((state) => state.todos);
   console.log(todos);
+  const handleToggle = (id) => {
+    // return todos.map((item) =>
+    //   return item.id === id ? [...item, !item.status] : item;
+    // );
+  };
   return (
     <div>
       {todos.map((item) => {
@@ -22,6 +27,7 @@ const TodoList = () => {
               <h3>{item.title}</h3>
               {/* <h3>{item.id}</h3> */}
               <h3>{item.status ? "Done" : "Pending"}</h3>
+              {/* <button onClick={handleToggle(item.id)}>Toggle</button> */}
             </div>
           </>
         );
